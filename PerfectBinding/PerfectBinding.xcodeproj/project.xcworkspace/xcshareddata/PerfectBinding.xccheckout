@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9C00B0D3-031E-4BE4-8E44-6F67E2137C05</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PerfectBinding</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7CD111C9-8F68-4487-B582-4CF69663C238</key>
+		<string>https://github.com/hsenju/PB</string>
+		<key>E59534EA-8BB6-4CA4-9A78-F41BDF5960CF</key>
+		<string>https://github.com/hsenju/BalloonRefactored</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PerfectBinding/PerfectBinding.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7CD111C9-8F68-4487-B582-4CF69663C238</key>
+		<string>../../../../Documents/PerfectBinding</string>
+		<key>E59534EA-8BB6-4CA4-9A78-F41BDF5960CF</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hsenju/BalloonRefactored</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E59534EA-8BB6-4CA4-9A78-F41BDF5960CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E59534EA-8BB6-4CA4-9A78-F41BDF5960CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dropbox</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7CD111C9-8F68-4487-B582-4CF69663C238</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PerfectBinding</string>
+		</dict>
+	</array>
+</dict>
+</plist>
