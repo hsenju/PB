@@ -204,7 +204,7 @@
 				6B196E1619312ED200D675C7 /* AppDelegate.m */,
 				6B196E1819312ED200D675C7 /* Main.storyboard */,
 				6BA2C785196F3C5E005B21A9 /* QuestionsDDD */,
-				6B265AB7194F560900D71864 /* QuestionsDetailsDetails */,
+				6B265AB7194F560900D71864 /* QuestionsDD */,
 				6B265AB0194BAA4100D71864 /* QuestionDetails */,
 				6B265AAF194BAA0900D71864 /* Questions */,
 				6B196E551931464700D675C7 /* HomeViewController.h */,
@@ -293,7 +293,7 @@
 			name = QuestionDetails;
 			sourceTree = "<group>";
 		};
-		6B265AB7194F560900D71864 /* QuestionsDetailsDetails */ = {
+		6B265AB7194F560900D71864 /* QuestionsDD */ = {
 			isa = PBXGroup;
 			children = (
 				6B265AB4194F560500D71864 /* DDTableViewCell.h */,
@@ -301,7 +301,7 @@
 				6B265AB8194F564700D71864 /* DDTableViewController.h */,
 				6B265AB9194F564700D71864 /* DDTableViewController.m */,
 			);
-			name = QuestionsDetailsDetails;
+			name = QuestionsDD;
 			sourceTree = "<group>";
 		};
 		6BA2C785196F3C5E005B21A9 /* QuestionsDDD */ = {
