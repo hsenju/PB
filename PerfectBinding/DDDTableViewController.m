@@ -65,7 +65,7 @@
 -(NSInteger) numberOfRowsInCurrentSection: (int)tab question:(int)question detail:(int)detail ddd:(int)ddd{
     //    [cell.textLabel setText:[DDDTableViewController stringForCellNumber:indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber dddNumber:dddNumber]];
     //+ (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber dddNumber: (NSNumber *)dddnumber{
-    if (tab==0){
+    //if (tab==0){
         if (question== 3){
             if (detail == 12){
                 if (ddd == 1){
@@ -89,7 +89,7 @@
                     return 8;
                 }
                 if (ddd == 3){
-                    return 5;
+                    return 6;
                 }
                 if (ddd == 4){
                     return 21;
@@ -172,7 +172,7 @@
                 }
             }
         }
-    }
+    //}
     return 0;
 }
 
@@ -220,7 +220,7 @@
 #pragma mark - PAPActivityFeedViewController
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber dddNumber: (NSNumber *)dddnumber{
-    if ([tnumber intValue]== 0){
+    //if ([tnumber intValue]== 0){
     if ([qqnumber intValue]== 3){
         if ([qnumber intValue] == 12){
             if ([dddnumber intValue] == 1){
@@ -815,7 +815,7 @@
             }
         }
     }
-    }
+    //}
      return nil;
 }
 
@@ -860,6 +860,13 @@
         [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
         cellsSelected[indexPath.row] = cellUnChecked;
     } else if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryNone){
+        if ([tabNumber intValue]== 1){
+            for (long row = 0, rowCount = [self.tableView numberOfRowsInSection:0]; row < rowCount; ++row) {
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [cellsSelected replaceObjectAtIndex:row withObject:cellUnChecked];
+            }
+        }
         [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
         cellsSelected[indexPath.row] = cellChecked;
     }

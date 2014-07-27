@@ -9,6 +9,7 @@
 #import "TableView.h"
 #import "TableViewCell.h"
 #import "DetailsViewController.h"
+#import "DetailsDetailsTableViewController.h"
 
 @interface TableView ()
 
@@ -283,9 +284,12 @@
                     NSMutableArray * cellsSelected = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:tabQuestionNumbers]];
                     [[PFUser currentUser] setObject:cellsSelected  forKey:[NSString stringWithFormat:@"Tab_%d_Question_%d", i, j]];
                     
+
                     if (i== 0 || i == 1){
                         if (j == 2 || j == 3){
-                            for (int k = 1; k<3;k++){
+                            DetailsViewController *dvcontroller = [DetailsViewController alloc];
+                            NSInteger dvnrows = [dvcontroller numberOfRowsInCurrentSection:i question:j];
+                            for (int k = 1; k<dvnrows;k++){
                                 NSString *tabQuestionNumbers =[NSString stringWithFormat:@"Tab %d Question %d Detail %d", i,j,k];
                                 NSMutableArray * cellsSelected = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:tabQuestionNumbers]];
                                 [[PFUser currentUser] setObject:cellsSelected  forKey:[NSString stringWithFormat:@"Tab_%d_Question_%d_Detail_%d", i, j,k]];
@@ -293,11 +297,14 @@
                                 if (i == 0){
                                     if (j == 3){
                                         if (k>11 && k!=15){
-                                            NSString *tabQuestionNumbers =[NSString stringWithFormat:@"Tab %d Question %d Detail %d", i,j,k];
-                                            NSMutableArray * cellsSelected = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:tabQuestionNumbers]];
-                                            [[PFUser currentUser] setObject:cellsSelected  forKey:[NSString stringWithFormat:@"Tab_%d_Question_%d_Detail_%d", i, j,k]];
+                                            DetailsDetailsTableViewController *ddtvcontroller = [DetailsDetailsTableViewController alloc];
+                                            NSInteger ddtvnrows = [ddtvcontroller numberOfRowsInCurrentSection:i question:j detail:k];
+                                            for (int l =1; l<ddtvnrows; l++){
+                                                NSString *tabQuestionNumbers =[NSString stringWithFormat:@"Tab %d Question %d Detail %d DDD %d", i,j,k,l];
+                                                NSMutableArray * cellsSelected = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:tabQuestionNumbers]];
+                                                [[PFUser currentUser] setObject:cellsSelected  forKey:[NSString stringWithFormat:@"Tab_%d_Question_%d_Detail_%d_DDD_%d", i, j,k,l]];
+                                            }
                                         }
-                                        
                                     }
                                 }
                             }
