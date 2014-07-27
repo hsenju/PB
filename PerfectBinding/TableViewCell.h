@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *Question;
 @property (strong, nonatomic) IBOutlet UIView *tableCell;
 
 + (CGFloat)horizontalTextSpaceForInsetWidth:(CGFloat)insetWidth;

@@ -22,10 +22,6 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)answerQuestion:(id)sender {
-
-}
-
 + (CGFloat)horizontalTextSpaceForInsetWidth:(CGFloat)insetWidth {
     return ([UIScreen mainScreen].bounds.size.width - (insetWidth * 2.0f)) - 72.0f - 46.0f;
 }
