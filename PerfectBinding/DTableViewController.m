@@ -236,7 +236,10 @@ static NSUInteger const kMCNumItems = 4;
     [self configureCell:cell forRowAtIndexPath:indexPath];
     if ([cellsSelected[indexPath.row]  isEqual: cellChecked]){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
     if (indexPath.row == 0){
         cell.userInteractionEnabled = NO;}
     

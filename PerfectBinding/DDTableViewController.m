@@ -156,6 +156,10 @@
     if ([cellsSelected[indexPath.row]  isEqual: cellChecked]){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     if (indexPath.row == 0){
         cell.userInteractionEnabled = NO;}
     cell.selectionStyle = UITableViewCellSelectionStyleNone;    
