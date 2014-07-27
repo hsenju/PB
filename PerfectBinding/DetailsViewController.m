@@ -243,6 +243,9 @@ static NSUInteger const kMCNumItems = 4;
     if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 4 || [questionNumber intValue] == 5)&&(indexPath.row == 1))){
         cell.userInteractionEnabled = NO;
         [cell.textLabel setText:cellsSelected[indexPath.row]];
+        if ([cell.textLabel.text isEqualToString:@"unchecked"]){
+            [cell.textLabel setText:@""];
+        }
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
