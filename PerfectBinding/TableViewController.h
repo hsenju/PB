@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableView : UITableViewController
+@interface TableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segControl;
 @property long actualSegmentedIndex;
 

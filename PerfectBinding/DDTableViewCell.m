@@ -1,14 +1,14 @@
 //
-//  QuestionDetailsTableViewCell.m
+//  DetailsDetailsTableViewCell.m
 //  PerfectBinding
 //
-//  Created by Hikari Senju on 6/13/14.
+//  Created by Hikari Senju on 6/16/14.
 //  Copyright (c) 2014 Hikari Senju. All rights reserved.
 //
 
-#import "QuestionDetailsTableViewCell.h"
+#import "DDTableViewCell.h"
 
-@implementation QuestionDetailsTableViewCell
+@implementation DDTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,5 +34,6 @@
 + (CGFloat)horizontalTextSpaceForInsetWidth:(CGFloat)insetWidth {
     return ([UIScreen mainScreen].bounds.size.width - (insetWidth * 2.0f)) - 72.0f - 46.0f;
 }
+
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TextAnswerCell.h"
 
-@interface DetailsViewController : UITableViewController <TextAnswerCellDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
+@interface DTableViewController : UITableViewController <TextAnswerCellDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) NSNumber *questionNumber;
 @property (strong, nonatomic) NSNumber *tabNumber;
 @property (strong, nonatomic) NSArray *heightArrayOne;

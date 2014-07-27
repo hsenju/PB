@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Hikari Senju. All rights reserved.
 //
 #import <Parse/Parse.h>
-#import "TableView.h"
+#import "TableViewController.h"
 #import "TableViewCell.h"
-#import "DetailsViewController.h"
-#import "DetailsDetailsTableViewController.h"
+#import "DTableViewController.h"
+#import "DDTableViewController.h"
 
-@interface TableView ()
+@interface TableViewController ()
 
 @end
 
-@implementation TableView
+@implementation TableViewController
 
 @synthesize actualSegmentedIndex;
 @synthesize segControl;
@@ -79,7 +79,7 @@
 }
 
 - (void)configureCell:(TableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [cell.textLabel setText:[TableView stringForCellNumber:indexPath.row tab:segControl.selectedSegmentIndex]];
+    [cell.textLabel setText:[TableViewController stringForCellNumber:indexPath.row tab:segControl.selectedSegmentIndex]];
 
 }
 
@@ -252,9 +252,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *contentString = [TableView stringForCellNumber:indexPath.row tab:segControl.selectedSegmentIndex];
+    NSString *contentString = [TableViewController stringForCellNumber:indexPath.row tab:segControl.selectedSegmentIndex];
     
-    return [TableView heightForCellWithContentString:contentString cellInsetWidth:0.0f];
+    return [TableViewController heightForCellWithContentString:contentString cellInsetWidth:0.0f];
     //return 70.0;
 }
 
@@ -263,7 +263,7 @@
     if ([[segue identifier] isEqualToString:@"questionsDetail"]) {
         
         // Get destination view
-        DetailsViewController *vc = [segue destinationViewController];
+        DTableViewController *vc = [segue destinationViewController];
         
         // Pass the information to your destination view
         [vc setQuestionNumber:[NSNumber numberWithInteger:[self.tableView indexPathForSelectedRow].row]];
@@ -287,7 +287,7 @@
 
                     if (i== 0 || i == 1){
                         if (j == 2 || j == 3){
-                            DetailsViewController *dvcontroller = [DetailsViewController alloc];
+                            DTableViewController *dvcontroller = [DTableViewController alloc];
                             NSInteger dvnrows = [dvcontroller numberOfRowsInCurrentSection:i question:j];
                             for (int k = 1; k<dvnrows;k++){
                                 NSString *tabQuestionNumbers =[NSString stringWithFormat:@"Tab %d Question %d Detail %d", i,j,k];
@@ -297,7 +297,7 @@
                                 if (i == 0){
                                     if (j == 3){
                                         if (k>11 && k!=15){
-                                            DetailsDetailsTableViewController *ddtvcontroller = [DetailsDetailsTableViewController alloc];
+                                            DDTableViewController *ddtvcontroller = [DDTableViewController alloc];
                                             NSInteger ddtvnrows = [ddtvcontroller numberOfRowsInCurrentSection:i question:j detail:k];
                                             for (int l =1; l<ddtvnrows; l++){
                                                 NSString *tabQuestionNumbers =[NSString stringWithFormat:@"Tab %d Question %d Detail %d DDD %d", i,j,k,l];

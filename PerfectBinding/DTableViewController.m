@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Hikari Senju. All rights reserved.
 //
 
-#import "DetailsViewController.h"
-#import "QuestionDetailsTableViewCell.h"
-#import "DetailsDetailsTableViewController.h"
+#import "DTableViewController.h"
+#import "DTableViewCell.h"
+#import "DDTableViewController.h"
 #import "TextAnswerCell.h"
 
 static NSUInteger const kMCNumItems = 4;
@@ -20,12 +20,12 @@ static NSUInteger const kMCNumItems = 4;
 #define cellChecked @"checked"
 #define cellUnChecked @"unchecked"
 
-@interface DetailsViewController ()
+@interface DTableViewController ()
 @property  (strong, atomic) NSString *tabQuestionNumbers;
 @property  (strong, atomic) NSMutableArray *cellsSelected;
 @end
 
-@implementation DetailsViewController
+@implementation DTableViewController
 @synthesize questionNumber;
 @synthesize tabNumber;
 @synthesize cellsSelected;
@@ -189,7 +189,7 @@ static NSUInteger const kMCNumItems = 4;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([[DetailsViewController stringForCellNumber:(NSUInteger)indexPath.row%kMCNumItems questionNumber:questionNumber tabNumber:tabNumber] isEqualToString:answerString]){
+    if ([[DTableViewController stringForCellNumber:(NSUInteger)indexPath.row%kMCNumItems questionNumber:questionNumber tabNumber:tabNumber] isEqualToString:answerString]){
         
         static NSString *CellIdentifier = @"TextAnswerCell";
         TextAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -217,12 +217,12 @@ static NSUInteger const kMCNumItems = 4;
     }
     
     static NSString *CellIdentifier = @"DetailsCell";
-    QuestionDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
     
     if (!cell) {
-        cell = [[QuestionDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[DTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         // iOS 7 separator
         if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -252,8 +252,8 @@ static NSUInteger const kMCNumItems = 4;
     return cell;
 }
 
-- (void)configureCell:(QuestionDetailsTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [cell.textLabel setText:[DetailsViewController stringForCellNumber:indexPath.row questionNumber:questionNumber tabNumber:tabNumber]];
+- (void)configureCell:(DTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell.textLabel setText:[DTableViewController stringForCellNumber:indexPath.row questionNumber:questionNumber tabNumber:tabNumber]];
 
 }
 
@@ -1003,7 +1003,7 @@ static NSUInteger const kMCNumItems = 4;
 
 
 + (CGFloat)heightForCellWithContentString:(NSString *)content cellInsetWidth:(CGFloat)cellInset {
-    CGFloat horizontalTextSpace = [QuestionDetailsTableViewCell horizontalTextSpaceForInsetWidth:cellInset];
+    CGFloat horizontalTextSpace = [DTableViewCell horizontalTextSpaceForInsetWidth:cellInset];
     
     CGSize contentSize = [content boundingRectWithSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin // wordwrap?
@@ -1022,9 +1022,9 @@ static NSUInteger const kMCNumItems = 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *contentString = [DetailsViewController stringForCellNumber:(NSUInteger)indexPath.row%kMCNumItems questionNumber:questionNumber tabNumber:tabNumber];
+    NSString *contentString = [DTableViewController stringForCellNumber:(NSUInteger)indexPath.row%kMCNumItems questionNumber:questionNumber tabNumber:tabNumber];
     
-    return [DetailsViewController heightForCellWithContentString:contentString cellInsetWidth:0.0f];
+    return [DTableViewController heightForCellWithContentString:contentString cellInsetWidth:0.0f];
     //return 70.0;
 }
 
@@ -1058,7 +1058,7 @@ static NSUInteger const kMCNumItems = 4;
     if ([[segue identifier] isEqualToString:@"detailsMoreDetails"]) {
         
         // Get destination view
-        DetailsDetailsTableViewController *viewcomp = [segue destinationViewController];
+        DDTableViewController *viewcomp = [segue destinationViewController];
         
         // Pass the information to your destination view
         [viewcomp setDetailNumber:[NSNumber numberWithInteger:[self.tableView indexPathForSelectedRow].row]];

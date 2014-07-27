@@ -7,7 +7,7 @@
 //
 #import <Parse/Parse.h>
 #import "HomeViewController.h"
-#import "TableView.h"
+#import "TableViewController.h"
 
 @interface HomeViewController (){
     NSMutableData *_imagedata;

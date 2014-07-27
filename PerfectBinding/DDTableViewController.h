@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailsDetailsTableViewController : UITableViewController
+@interface DDTableViewController : UITableViewController
 //@property (strong, atomic) NSIndexPath *questionNumber;
 @property  (nonatomic, strong) NSNumber *detailNumber;
 @property  (nonatomic, strong) NSNumber *questionNumber;

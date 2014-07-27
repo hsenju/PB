@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="102" y="102"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="JNG-Ob-gKg">
             <objects>
-                <viewController id="vJE-Hs-dth" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vJE-Hs-dth" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F46-te-gif"/>
                         <viewControllerLayoutGuide type="bottom" id="COz-UD-xgk"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="499" y="102"/>
         </scene>
-        <!--Table View-->
+        <!--Table View Controller-->
         <scene sceneID="xcO-3X-mtb">
             <objects>
-                <tableViewController storyboardIdentifier="QuestionController" id="agg-Bt-VRJ" customClass="TableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="QuestionController" id="agg-Bt-VRJ" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Met-Zm-QO2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="955" y="634"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="72x-KZ-2Ub">
             <objects>
-                <tableViewController id="dOh-hW-S3N" customClass="DetailsViewController" sceneMemberID="viewController">
+                <tableViewController id="dOh-hW-S3N" customClass="DTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mqn-05-DfF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +165,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </connections>
                         </datePicker>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DetailsCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCell" id="bHP-Br-lr5" customClass="QuestionDetailsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DetailsCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailsCell" id="bHP-Br-lr5" customClass="DTableViewCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bHP-Br-lr5" id="M7q-hY-Nmq">
@@ -210,10 +210,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1347" y="634"/>
         </scene>
-        <!--Details Details Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="RxG-71-57s">
             <objects>
-                <tableViewController id="pmC-91-nWY" customClass="DetailsDetailsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="pmC-91-nWY" customClass="DDTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="73g-2d-2RP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Hikari Senju. All rights reserved.
 //
 #import "DddTableViewController.h"
-#import "DetailsDetailsTableViewController.h"
-#import "DetailsDetailsTableViewCell.h"
+#import "DDTableViewController.h"
+#import "DDTableViewCell.h"
 
 #define nsUserDefaultString @"Tab %@ Question %@ Detail %@"
 #define cellChecked @"checked"
 #define cellUnChecked @"unchecked"
 
-@interface DetailsDetailsTableViewController ()
+@interface DDTableViewController ()
 @property  (strong, atomic) NSString *tabQuestionDetailNumbers;
 @property  (strong, atomic) NSMutableArray *cellsSelected;
 @end
 
-@implementation DetailsDetailsTableViewController
+@implementation DDTableViewController
 
 @synthesize tabNumber;
 @synthesize detailNumber;
@@ -134,12 +134,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"DetailsCell";
-    DetailsDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
     
     if (!cell) {
-        cell = [[DetailsDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[DDTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         // iOS 7 separator
         if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -163,8 +163,8 @@
 }
 
 
-- (void)configureCell:(DetailsDetailsTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [cell.textLabel setText:[DetailsDetailsTableViewController stringForCellNumber:indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber]];
+- (void)configureCell:(DDTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell.textLabel setText:[DDTableViewController stringForCellNumber:indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber]];
 }
 
 #pragma mark - PAPActivityFeedViewController
@@ -813,7 +813,7 @@
 
 
 + (CGFloat)heightForCellWithContentString:(NSString *)content cellInsetWidth:(CGFloat)cellInset {
-    CGFloat horizontalTextSpace = [DetailsDetailsTableViewCell horizontalTextSpaceForInsetWidth:cellInset];
+    CGFloat horizontalTextSpace = [DDTableViewCell horizontalTextSpaceForInsetWidth:cellInset];
     
     CGSize contentSize = [content boundingRectWithSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin // wordwrap?
@@ -832,9 +832,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *contentString = [DetailsDetailsTableViewController stringForCellNumber:(NSUInteger)indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber ];
+    NSString *contentString = [DDTableViewController stringForCellNumber:(NSUInteger)indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber ];
     
-    return [DetailsDetailsTableViewController heightForCellWithContentString:contentString cellInsetWidth:0.0f];
+    return [DDTableViewController heightForCellWithContentString:contentString cellInsetWidth:0.0f];
     //return 70.0;
 }
 

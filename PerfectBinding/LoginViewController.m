@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Hikari Senju. All rights reserved.
 //
 #import <Parse/Parse.h>
-#import "ViewController.h"
-#import "TableView.h"
+#import "LoginViewController.h"
+#import "TableViewController.h"
 #import "HomeViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad
 {
