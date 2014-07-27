@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewCell.h"
 
-@interface DDDTableViewCell : UITableViewCell
-+ (CGFloat)horizontalTextSpaceForInsetWidth:(CGFloat)insetWidth;
+@interface DDDTableViewCell : TableViewCell
 @end
