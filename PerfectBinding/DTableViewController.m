@@ -161,20 +161,83 @@ static NSUInteger const kMCNumItems = 4;
         }
         return 4;
     }else{
-        if (question == 1  || question == 3  || question == 9 || question == 12 ||  question == 13 || question == 14 || question == 17 || question == 19 || question == 22  || question == 23  || question == 25  || question == 28  || question == 34){
-            return 5;
-        }
-        else if (question == 7){
-            return 12;
-        }
-        else if (question == 11  || question == 27  || question == 30  || question == 33){
+        if(question == 0){
+            return 3;
+        } else if (question == 1){
             return 6;
-        }
-        else if (question == 15 || question == 18 || question == 20 || question == 21  || question == 24){
+        } else if (question == 2){
+            return 5;
+        }else if (question == 3){
+            return 6;
+        }else if (question == 4){
+            return 7;
+        }else if (question == 5){
+            return 7;
+        }else if (question == 6){
+            return 6;
+        }else if (question == 7){
+            return 5;
+        }else if (question == 8){
+            return 5;
+        }else if (question == 9){
+            return 4;
+        }else if (question == 10){
+            return 5;
+        }else if (question == 11){
+            return 6;
+        }else if (question == 12){
+            return 5;
+        }else if (question == 13){
+            return 5;
+        }else if (question == 14){
+            return 5;
+        }else if (question == 15){
+            return 5;
+        }else if (question == 16){
+            return 7;
+        }else if (question == 17){
+            return 4;
+        }else if (question == 18){
+            return 5;
+        }else if (question == 19){
+            return 5;
+        }else if (question == 20){
+            return 5;
+        }else if (question == 21){
+            return 4;
+        }else if (question == 22){
+            return 5;
+        }else if (question == 23){
+            return 5;
+        }else if (question == 24){
+            return 5;
+        }else if (question == 25){
+            return 4;
+        }else if (question == 26){
+            return 5;
+        }else if (question == 27){
+            return 5;
+        }else if (question == 28){
+            return 5;
+        }else if (question == 29){
+            return 5;
+        }else if (question == 30){
+            return 6;
+        }else if (question == 31){
+            return 5;
+        }else if (question == 32){
+            return 4;
+        }else if (question == 33){
+            return 6;
+        }else if (question == 34){
+            return 4;
+        }else if (question == 35){
+            return 5;
+        }else if (question == 36){
+            return 5;
+        }else {
             return 3;
         }
-        
-        return 4;
         
     }
 
@@ -584,29 +647,15 @@ static NSUInteger const kMCNumItems = 4;
                 return NSLocalizedString(@"Teaching", nil);
             } else if ((int)cellNumber == 2)  {
                 return NSLocalizedString(@"Research", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"Both equally", nil);
             } else if ((int)cellNumber == 3)  {
+                return NSLocalizedString(@"Both equally", nil);
+            } else if ((int)cellNumber == 4)  {
                 return NSLocalizedString(@"Done", nil);
             } else {
                 return nil;
             }
         }
         else if ([qnumber intValue] == 3){
-            if (cellNumber == 0) {
-                return NSLocalizedString(@"Langdell, Lamont, or Widener?", nil);
-            } else if ((int)cellNumber == 1) {
-                return NSLocalizedString(@"Langdell", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"Lamont", nil);
-            } else if ((int)cellNumber == 3)  {
-                return NSLocalizedString(@"Widener", nil);
-            } else if ((int)cellNumber == 4)  {
-                return NSLocalizedString(@"Done", nil);
-            } else {
-                return nil;
-            }
-        }else if ([qnumber intValue] == 4){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"It’s a perfect 68 degrees out and you want to spend some time on the Charles: do you go for a run, bike ride, or picnic?", nil);
             } else if ((int)cellNumber == 1) {
@@ -622,7 +671,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 5){
+        }else if ([qnumber intValue] == 4){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Which of the following words would your close friends most likely use to describe you? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -640,7 +689,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 6){
+        }else if ([qnumber intValue] == 5){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Which of the following character traits do you value most in a friend? (Pick one)", nil);
             } else if ((int)cellNumber == 1) {
@@ -658,7 +707,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 7){
+        }else if ([qnumber intValue] == 6){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Berry Line, Pinkberry, or Yogurt Land?", nil);
             } else if ((int)cellNumber == 1) {
@@ -674,7 +723,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 8){
+        }else if ([qnumber intValue] == 7){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"While all important, which of the following benefits of a close friendship or being in relationship would you say you value the most? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -688,7 +737,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 9){
+        }else if ([qnumber intValue] == 8){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you tend to prefer spending time with people one-on-one, in small groups, or in large gatherings?  ", nil);
             } else if ((int)cellNumber == 1) {
@@ -702,7 +751,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 10){
+        }else if ([qnumber intValue] == 9){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Which of these two descriptions better approximates an ideal relationship: ", nil);
             } else if ((int)cellNumber == 1) {
@@ -714,7 +763,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 11){
+        }else if ([qnumber intValue] == 10){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Thinking about times in which you have found yourself talking about your close friends or loved ones to other people, do you feel that you tend to describe them: ", nil);
             } else if ((int)cellNumber == 1) {
@@ -728,7 +777,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 12){
+        }else if ([qnumber intValue] == 11){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"In the context of a romantic relationship between two individuals, when do you think is the right time for sex:", nil);
             } else if ((int)cellNumber == 1) {
@@ -744,7 +793,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 13){
+        }else if ([qnumber intValue] == 12){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Many people have friends who do not know each other. Do new friends that you make tend to fit in well with your other friends?", nil);
             } else if ((int)cellNumber == 1) {
@@ -758,7 +807,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 14){
+        }else if ([qnumber intValue] == 13){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do your close friends tend to get along with your romantic interests?", nil);
             } else if ((int)cellNumber == 1) {
@@ -772,7 +821,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 15){
+        }else if ([qnumber intValue] == 14){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you to tend to know reasonably well the family members of your very closest friends? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -786,7 +835,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 16){
+        }else if ([qnumber intValue] == 15){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"How important is it that you like someone your dating’s family and they like yours? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -800,7 +849,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 17){
+        }else if ([qnumber intValue] == 16){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Among the following four negative attributes, pick two that are especially characteristic of a bad friend? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -818,19 +867,19 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 18){
+        }else if ([qnumber intValue] == 17){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Would you rather meet people with interests that are similar to yours or different than yours? Similar, Different", nil);
             } else if ((int)cellNumber == 1) {
                 return NSLocalizedString(@"Similar", nil);
             } else if ((int)cellNumber == 2)  {
                 return NSLocalizedString(@"Different", nil);
-            } else if ((int)cellNumber == 2)  {
+            } else if ((int)cellNumber == 3)  {
                 return NSLocalizedString(@"Done", nil);
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 19){
+        }else if ([qnumber intValue] == 18){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Compared to other people, do you think you handle the stress of grad school or work pretty well? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -844,7 +893,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 20){
+        }else if ([qnumber intValue] == 19){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Langdell (Law library), Lamont, or Widener?", nil);
             } else if ((int)cellNumber == 1) {
@@ -858,7 +907,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 21){
+        }else if ([qnumber intValue] == 20){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"How often do you enjoy going for a drink? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -872,7 +921,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 22){
+        }else if ([qnumber intValue] == 21){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Have you ever lived in the graduate student residence halls? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -884,7 +933,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 23){
+        }else if ([qnumber intValue] == 22){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you think that two people who love and are committed to each other generally ought to get married? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -898,7 +947,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 24){
+        }else if ([qnumber intValue] == 23){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Which of the following best approximates how you feel about being in a loving, stable relationship at this point in your life?", nil);
             } else if ((int)cellNumber == 1) {
@@ -912,7 +961,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 25){
+        }else if ([qnumber intValue] == 24){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Would you prefer to make new friends in the hard sciences or humanities?", nil);
             } else if ((int)cellNumber == 1) {
@@ -926,7 +975,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 26){
+        }else if ([qnumber intValue] == 25){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Have you noticed the “young lady”-“young man” newspaper salesman in Harvard Square?", nil);
             } else if ((int)cellNumber == 1) {
@@ -938,7 +987,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 27){
+        }else if ([qnumber intValue] == 26){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"In general, how does the idea of enduring challenges together with your partner sound?", nil);
             } else if ((int)cellNumber == 1) {
@@ -952,7 +1001,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 28){
+        }else if ([qnumber intValue] == 27){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you like the taste of beer?", nil);
             } else if ((int)cellNumber == 1) {
@@ -966,7 +1015,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 29){
+        }else if ([qnumber intValue] == 28){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"How religious/non-religious would you consider yourself? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -975,12 +1024,12 @@ static NSUInteger const kMCNumItems = 4;
                 return NSLocalizedString(@"I consider myself spiritual, but not religious", nil);
             } else if ((int)cellNumber == 3)  {
                 return NSLocalizedString(@"I am not at all religious", nil);
-            } else if ((int)cellNumber == 3)  {
+            } else if ((int)cellNumber == 4)  {
                 return NSLocalizedString(@"Done", nil);
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 30){
+        }else if ([qnumber intValue] == 29){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you think that in general, men and women can be very close friends without any romantic feelings developing? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -994,7 +1043,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 31){
+        }else if ([qnumber intValue] == 30){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"If were dating someone who is overweight, would that be? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -1010,21 +1059,21 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 32){
+        }else if ([qnumber intValue] == 31){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"How often do you see your close friends in Cambridge? ", nil);
             } else if ((int)cellNumber == 1) {
                 return NSLocalizedString(@"At least every few days", nil);
             } else if ((int)cellNumber == 2)  {
                 return NSLocalizedString(@"Maybe once a week", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"Every two weeks or longer", nil);
             } else if ((int)cellNumber == 3)  {
+                return NSLocalizedString(@"Every two weeks or longer", nil);
+            } else if ((int)cellNumber == 4)  {
                 return NSLocalizedString(@"Done", nil);
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 33){
+        }else if ([qnumber intValue] == 32){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Do you tend to plan most things in advance or do you go with the flow? ", nil);
             } else if ((int)cellNumber == 1) {
@@ -1036,7 +1085,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 34){
+        }else if ([qnumber intValue] == 33){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Which character flows annoy you most?", nil);
             } else if ((int)cellNumber == 1) {
@@ -1052,7 +1101,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 35){
+        }else if ([qnumber intValue] == 34){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"For a variety of reasons, some people have a preference for being in relationships with people of different racial or ethnic background, whereas others have a preference for being in relationships with people of similar racial or ethnic background? And some people don’t care. Do you have a slight or stronger preference toward dating someone with:", nil);
             } else if ((int)cellNumber == 1) {
@@ -1066,7 +1115,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 36){
+        }else if ([qnumber intValue] == 35){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"If you had the choice as to whether there was an afterlife where everyone would be rewarded for good acts and punished for bad acts that they did, in proportion, would you want such a place to exist, assuming no other alternatives?", nil);
             } else if ((int)cellNumber == 1) {
@@ -1080,7 +1129,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 37){
+        }else if ([qnumber intValue] == 36){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"How excited are you abou the prospect of a blind, 30 minute date?", nil);
             } else if ((int)cellNumber == 1) {
@@ -1094,7 +1143,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        }else if ([qnumber intValue] == 38){
+        }else if ([qnumber intValue] == 37){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"In either technical or “fun” language, please describe what you study in one sentence.", nil);
             } else if ((int)cellNumber == 1) {
