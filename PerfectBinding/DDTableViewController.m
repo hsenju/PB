@@ -63,14 +63,14 @@
 -(NSInteger) numberOfRowsInCurrentSection: (int)tab question:(int)question detail:(int)detail{
 //    if (tab== 0){
         if (question== 2){
-            if (detail== 1){
-                return 13;
-            }
-            else if (detail == 2){
-                return 7;
-            }
-        }
-        if (question== 3){
+//            if (detail== 1){
+//                return 13;
+//            }
+//            else if (detail == 2){
+//                return 7;
+//            }
+//        }
+//        if (question== 3){
             if (detail == 1){
                 return 11;
             }
@@ -161,7 +161,13 @@
     }
     
     if (indexPath.row == 0){
-        cell.userInteractionEnabled = NO;}
+        cell.userInteractionEnabled = NO;
+        cell.textLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    }else {
+        cell.userInteractionEnabled = YES;
+        cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;    
     return cell;
 }
@@ -176,58 +182,58 @@
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber{
     //if ([tnumber intValue] == 0){
     if ([qqnumber intValue]== 2){
-        if ([qnumber intValue] == 1){
-            if (cellNumber == 0) {
-                return NSLocalizedString(@"Harvard Graduate Schools:", nil);
-            } else if ((int) cellNumber == 1) {
-                return NSLocalizedString(@"Harvard Business School", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"Graduate School of Arts and Sciences", nil);
-            } else if ((int)cellNumber == 3)  {
-                return NSLocalizedString(@"Graduate School of Design", nil);
-            } else if ((int)cellNumber == 4)  {
-                return NSLocalizedString(@"Harvard Graduate School of Education", nil);
-            } else if ((int)cellNumber == 5)  {
-                return NSLocalizedString(@"Harvard Kennedy School", nil);
-            } else if ((int)cellNumber == 6)  {
-                return NSLocalizedString(@"Harvard Law School", nil);
-            } else if ((int)cellNumber == 7)  {
-                return NSLocalizedString(@"Harvard School of Public Health", nil);
-            } else if ((int)cellNumber == 8)  {
-                return NSLocalizedString(@"Harvard School of Dental Medicine", nil);
-            } else if ((int)cellNumber == 9)  {
-                return NSLocalizedString(@"Harvard Divinity School", nil);
-            } else if ((int)cellNumber == 10)  {
-                return NSLocalizedString(@"School of Engineering and Applied Sciences", nil);
-            } else if ((int)cellNumber == 11)  {
-                return NSLocalizedString(@"Harvard Medical School", nil);
-            } else if ((int)cellNumber == 12)  {
-                return NSLocalizedString(@"Done", nil);
-            } else {
-                return nil;
-            }
-        }
-        else if ([qnumber intValue] == 2){
-            if (cellNumber == 0) {
-                return NSLocalizedString(@"MIT Graduate Schools:", nil);
-            } else if ((int)cellNumber == 1) {
-                return NSLocalizedString(@"School of Architecture and Planning", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"School of Engineering", nil);
-            } else if ((int)cellNumber == 3)  {
-                return NSLocalizedString(@"School of Humanities, Arts, and Social Sciences", nil);
-            } else if ((int)cellNumber == 4)  {
-                return NSLocalizedString(@"MIT Sloan School of Management", nil);
-            } else if ((int)cellNumber == 5)  {
-                return NSLocalizedString(@"School of Science", nil);
-            } else if ((int)cellNumber == 6)  {
-                return NSLocalizedString(@"Done", nil);
-            } else {
-                return nil;
-            }
-        }
-    }
-    if ([qqnumber intValue]== 3){
+//        if ([qnumber intValue] == 1){
+//            if (cellNumber == 0) {
+//                return NSLocalizedString(@"Harvard Graduate Schools:", nil);
+//            } else if ((int) cellNumber == 1) {
+//                return NSLocalizedString(@"Harvard Business School", nil);
+//            } else if ((int)cellNumber == 2)  {
+//                return NSLocalizedString(@"Graduate School of Arts and Sciences", nil);
+//            } else if ((int)cellNumber == 3)  {
+//                return NSLocalizedString(@"Graduate School of Design", nil);
+//            } else if ((int)cellNumber == 4)  {
+//                return NSLocalizedString(@"Harvard Graduate School of Education", nil);
+//            } else if ((int)cellNumber == 5)  {
+//                return NSLocalizedString(@"Harvard Kennedy School", nil);
+//            } else if ((int)cellNumber == 6)  {
+//                return NSLocalizedString(@"Harvard Law School", nil);
+//            } else if ((int)cellNumber == 7)  {
+//                return NSLocalizedString(@"Harvard School of Public Health", nil);
+//            } else if ((int)cellNumber == 8)  {
+//                return NSLocalizedString(@"Harvard School of Dental Medicine", nil);
+//            } else if ((int)cellNumber == 9)  {
+//                return NSLocalizedString(@"Harvard Divinity School", nil);
+//            } else if ((int)cellNumber == 10)  {
+//                return NSLocalizedString(@"School of Engineering and Applied Sciences", nil);
+//            } else if ((int)cellNumber == 11)  {
+//                return NSLocalizedString(@"Harvard Medical School", nil);
+//            } else if ((int)cellNumber == 12)  {
+//                return NSLocalizedString(@"Done", nil);
+//            } else {
+//                return nil;
+//            }
+//        }
+//        else if ([qnumber intValue] == 2){
+//            if (cellNumber == 0) {
+//                return NSLocalizedString(@"MIT Graduate Schools:", nil);
+//            } else if ((int)cellNumber == 1) {
+//                return NSLocalizedString(@"School of Architecture and Planning", nil);
+//            } else if ((int)cellNumber == 2)  {
+//                return NSLocalizedString(@"School of Engineering", nil);
+//            } else if ((int)cellNumber == 3)  {
+//                return NSLocalizedString(@"School of Humanities, Arts, and Social Sciences", nil);
+//            } else if ((int)cellNumber == 4)  {
+//                return NSLocalizedString(@"MIT Sloan School of Management", nil);
+//            } else if ((int)cellNumber == 5)  {
+//                return NSLocalizedString(@"School of Science", nil);
+//            } else if ((int)cellNumber == 6)  {
+//                return NSLocalizedString(@"Done", nil);
+//            } else {
+//                return nil;
+//            }
+//        }
+//    }
+//    if ([qqnumber intValue]== 3){
         if ([qnumber intValue] == 1){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Harvard Business School:", nil);

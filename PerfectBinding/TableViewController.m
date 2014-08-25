@@ -44,7 +44,7 @@
     if (index == 0){
         return 4;
     }else if (index == 1){
-        return 12;
+        return 11;
     }else{
         return 39;}
     
@@ -102,24 +102,22 @@
         } else if ((int)cellNumber == 1)  {
             return NSLocalizedString(@"2. Orientation: ", nil);
         } else if ((int)cellNumber == 2)  {
-            return NSLocalizedString(@"3. University: ", nil);
-        } else if ((int)cellNumber == 3)  {
             return NSLocalizedString(@"4. Department: ", nil);
-        } else if ((int)cellNumber == 4)  {
+        } else if ((int)cellNumber == 3)  {
             return NSLocalizedString(@"5. Birthday: ", nil);
-        } else if ((int)cellNumber == 5)  {
+        } else if ((int)cellNumber == 4)  {
             return NSLocalizedString(@"6. Height: ", nil);
-        } else if ((int)cellNumber == 6)  {
+        } else if ((int)cellNumber == 5)  {
             return NSLocalizedString(@"7. Ethnicity: ", nil);
-        } else if ((int)cellNumber == 7)  {
+        } else if ((int)cellNumber == 6)  {
             return NSLocalizedString(@"8. Religion : ", nil);
-        } else if ((int)cellNumber == 8)  {
+        } else if ((int)cellNumber == 7)  {
             return NSLocalizedString(@"9. Nationality: ", nil);
-        } else if ((int)cellNumber == 9)  {
+        } else if ((int)cellNumber == 8)  {
             return NSLocalizedString(@"10. Languages: ", nil);
-        } else if ((int)cellNumber == 10)  {
+        } else if ((int)cellNumber == 9)  {
             return NSLocalizedString(@"11. Drinks: ", nil);
-        } else if ((int)cellNumber == 11)  {
+        } else if ((int)cellNumber == 10)  {
             return NSLocalizedString(@"12. Smokes: ", nil);
         } else {
             return nil;

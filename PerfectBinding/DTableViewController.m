@@ -55,7 +55,6 @@ static NSUInteger const kMCNumItems = 4;
         for (int i=0;i<[self numberOfRowsInCurrentSection:[tabNumber intValue] question:[questionNumber intValue]];i++){
             [cellsSelected addObject:cellUnChecked];
         }
-        //r[cellsSelected replaceObjectAtIndex:[self numberOfRowsInCurrentSection]-1 withObject:nil];
     }
     
     if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 5))){
@@ -64,8 +63,7 @@ static NSUInteger const kMCNumItems = 4;
         myPickerView.showsSelectionIndicator = YES;
         [self.view addSubview:myPickerView];
         self.heightArrayOne =  [[NSArray alloc] initWithObjects:@"3\'", @"4\'", @"5\'", @"6\'", @"7\'", nil];
-        //self.heightArrayTwo =  [[NSArray alloc] initWithObjects:@"1\"", @"2\"", @"3\"", @"4\"", @"5\"","6\"", @"7\"", @"8\"", @"9\"", @"10\"", @"11\"", nil];
-        self.heightArrayTwo = [[NSArray alloc] initWithObjects:@"0\''", @"1\''", @"2\''", @"3\''",@"4\''", @"5\''", @"6\''",@"7\''",@"8\''",@"9\''",@"10\''",@"11\''", nil]; //@"4\''", @"5\''","6\''", @"7\''", @"8\''", @"9\''", @"10\''", @"11\''", nil];
+        self.heightArrayTwo = [[NSArray alloc] initWithObjects:@"0\''", @"1\''", @"2\''", @"3\''",@"4\''", @"5\''", @"6\''",@"7\''",@"8\''",@"9\''",@"10\''",@"11\''", nil];
         self.tableView.scrollEnabled = FALSE;
     }
     // Do any additional setup after loading the view.
@@ -139,7 +137,7 @@ static NSUInteger const kMCNumItems = 4;
 
 -(NSInteger) numberOfRowsInCurrentSection: (int)tab question:(int)question {
     if (tab== 0){
-        if (question == 3){
+        if (question == 2){
             return 18;
         }
         return 4;
@@ -147,7 +145,7 @@ static NSUInteger const kMCNumItems = 4;
         if (question == 1 || question == 10){
             return 5;
         }
-        else if (question == 3){
+        else if (question == 2){
             return 18;
         }
         else if (question == 4 || question == 5 || question == 8){
@@ -306,6 +304,9 @@ static NSUInteger const kMCNumItems = 4;
     if (indexPath.row == 0){
         cell.userInteractionEnabled = NO;
         cell.textLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    } else {
+        cell.userInteractionEnabled = YES;
+        cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
     }
     
     if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 4 || [questionNumber intValue] == 5)&&(indexPath.row == 1))){
@@ -427,19 +428,6 @@ static NSUInteger const kMCNumItems = 4;
         }
         else if ([qnumber intValue] == 2){
             if (cellNumber == 0) {
-                return NSLocalizedString(@"University:", nil);
-            } else if ((int)cellNumber == 1) {
-                return NSLocalizedString(@"Harvard", nil);
-            } else if ((int)cellNumber == 2)  {
-                return NSLocalizedString(@"MIT", nil);
-            } else if ((int)cellNumber == 3)  {
-                return NSLocalizedString(@"Done", nil);
-            } else {
-                return nil;
-            }
-        }
-        else if ([qnumber intValue] == 3){
-            if (cellNumber == 0) {
                 return NSLocalizedString(@"Department:", nil);
             } else if ((int) cellNumber == 1) {
                 return NSLocalizedString(@"Harvard Business School", nil);
@@ -480,7 +468,7 @@ static NSUInteger const kMCNumItems = 4;
             }
             
         }
-        else if ([qnumber intValue] == 4){
+        else if ([qnumber intValue] == 3){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Birthday", nil);
             } else if ((int)cellNumber == 1) {
@@ -491,7 +479,7 @@ static NSUInteger const kMCNumItems = 4;
                 return nil;
             }
         }
-        else if ([qnumber intValue] == 5){
+        else if ([qnumber intValue] == 4){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Height", nil);
             } else if ((int)cellNumber == 1) {
@@ -502,7 +490,7 @@ static NSUInteger const kMCNumItems = 4;
                 return nil;
             }
         }
-        else if ([qnumber intValue] == 6){
+        else if ([qnumber intValue] == 5){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Ethnicity", nil);
             } else if ((int)cellNumber == 1) {
@@ -526,7 +514,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        } else if ([qnumber intValue] == 7){
+        } else if ([qnumber intValue] == 6){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Religion", nil);
             } else if ((int)cellNumber == 1) {
@@ -552,7 +540,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        } else if ([qnumber intValue] == 8){
+        } else if ([qnumber intValue] == 7){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Nationality", nil);
             } else if ((int)cellNumber == 1) {
@@ -562,7 +550,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        } else if ([qnumber intValue] == 9){
+        } else if ([qnumber intValue] == 8){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Languages", nil);
             } else if ((int)cellNumber == 1) {
@@ -572,7 +560,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        } else if ([qnumber intValue] == 10){
+        } else if ([qnumber intValue] == 9){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Drinks", nil);
             } else if ((int)cellNumber == 1) {
@@ -586,7 +574,7 @@ static NSUInteger const kMCNumItems = 4;
             } else {
                 return nil;
             }
-        } else if ([qnumber intValue] == 11){
+        } else if ([qnumber intValue] == 10){
             if (cellNumber == 0) {
                 return NSLocalizedString(@"Smokes", nil);
             } else if ((int)cellNumber == 1) {

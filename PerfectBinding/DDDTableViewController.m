@@ -210,7 +210,13 @@
     }
     
     if (indexPath.row == 0){
-        cell.userInteractionEnabled = NO;}
+        cell.userInteractionEnabled = NO;
+        cell.textLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+    }else {
+        cell.userInteractionEnabled = YES;
+        cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -224,7 +230,7 @@
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber dddNumber: (NSNumber *)dddnumber{
     //if ([tnumber intValue]== 0){
-    if ([qqnumber intValue]== 3){
+    if ([qqnumber intValue]== 2){
         if ([qnumber intValue] == 12){
             if ([dddnumber intValue] == 1){
                 if (cellNumber == 0) {
