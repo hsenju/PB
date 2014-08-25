@@ -36,7 +36,6 @@ static NSUInteger const kMCNumItems = 4;
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-
     }
     return self;
 }
@@ -44,8 +43,10 @@ static NSUInteger const kMCNumItems = 4;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!(([tabNumber intValue]== 1)&&([questionNumber intValue] == 4))){
+    if (!(([tabNumber intValue]== 1)&&([questionNumber intValue] == 3))){
         self.datePicker.hidden = TRUE;
+    } else {
+        self.datePicker.hidden = FALSE;
     }
     tabQuestionNumbers =[NSString stringWithFormat:nsUserDefaultString, [tabNumber stringValue],[questionNumber stringValue]];
     cellsSelected = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:tabQuestionNumbers]];
@@ -57,7 +58,7 @@ static NSUInteger const kMCNumItems = 4;
         }
     }
     
-    if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 5))){
+    if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 4))){
         UIPickerView *myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
         myPickerView.delegate = self;
         myPickerView.showsSelectionIndicator = YES;
@@ -65,6 +66,8 @@ static NSUInteger const kMCNumItems = 4;
         self.heightArrayOne =  [[NSArray alloc] initWithObjects:@"3\'", @"4\'", @"5\'", @"6\'", @"7\'", nil];
         self.heightArrayTwo = [[NSArray alloc] initWithObjects:@"0\''", @"1\''", @"2\''", @"3\''",@"4\''", @"5\''", @"6\''",@"7\''",@"8\''",@"9\''",@"10\''",@"11\''", nil];
         self.tableView.scrollEnabled = FALSE;
+    } else {
+    
     }
     // Do any additional setup after loading the view.
 }
@@ -79,12 +82,11 @@ static NSUInteger const kMCNumItems = 4;
         NSString *newString = [[stringOne stringByAppendingString:@" "]stringByAppendingString:stringTwo];
         
         [cellsSelected replaceObjectAtIndex:1 withObject:newString];
-        //[self.tableView reloadData];
         
         NSIndexPath *fifthRow = [NSIndexPath indexPathForRow:1 inSection:0];
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:fifthRow];
         cell.textLabel.text = newString;
-        //[[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
+        [self.tableView reloadRowsAtIndexPaths:@[fifthRow] withRowAnimation:UITableViewRowAnimationFade];
     });
     
 }
@@ -142,22 +144,29 @@ static NSUInteger const kMCNumItems = 4;
         }
         return 4;
     }else if (tab == 1){
-        if (question == 1 || question == 10){
+        if(question == 0){
+            return 4;
+        } else if (question == 1){
             return 5;
-        }
-        else if (question == 2){
+        } else if (question == 2){
             return 18;
-        }
-        else if (question == 4 || question == 5 || question == 8){
+        }else if (question == 3){
             return 3;
-        }
-        else if (question == 6){
+        }else if (question == 4){
+            return 3;
+        }else if (question == 5){
             return 10;
-        }
-        else if (question == 7){
+        }else if (question == 6){
             return 11;
+        }else if (question == 7){
+            return 3;
+        }else if (question == 8){
+            return 3;
+        }else if (question == 9){
+            return 5;
+        }else {
+            return 4;
         }
-        return 4;
     }else{
         if(question == 0){
             return 3;
@@ -250,7 +259,7 @@ static NSUInteger const kMCNumItems = 4;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([[DTableViewController stringForCellNumber:(NSUInteger)indexPath.row%kMCNumItems questionNumber:questionNumber tabNumber:tabNumber] isEqualToString:answerString]){
+    if ([[DTableViewController stringForCellNumber:(NSUInteger)indexPath.row questionNumber:questionNumber tabNumber:tabNumber] isEqualToString:answerString]){
         
         static NSString *CellIdentifier = @"TextAnswerCell";
         TextAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -309,7 +318,7 @@ static NSUInteger const kMCNumItems = 4;
         cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
     }
     
-    if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 4 || [questionNumber intValue] == 5)&&(indexPath.row == 1))){
+    if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 3 || [questionNumber intValue] == 4)&&(indexPath.row == 1))){
         cell.userInteractionEnabled = NO;
         [cell.textLabel setText:cellsSelected[indexPath.row]];
         if ([cell.textLabel.text isEqualToString:@"unchecked"]){
@@ -588,7 +597,6 @@ static NSUInteger const kMCNumItems = 4;
             }
         }
     } else if ([tnumber intValue]== 2){
-/*****************************************************************************************************************************/
         if ([qnumber intValue] == 0){//
             if (cellNumber == 0) {
                 return NSLocalizedString(@"In one to five words, what is the best compliment you’ve ever gotten?", nil);
@@ -1173,7 +1181,7 @@ static NSUInteger const kMCNumItems = 4;
         [cellsSelected replaceObjectAtIndex:1 withObject:text];
 }
 - (IBAction)dateValueChanged:(id)sender {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    //dispatch_async(dispatch_get_main_queue(), ^{
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, YYYY"];
     // NSString *chosenDateString =  [formatter stringFromDate:self.datePicker.date];
@@ -1188,8 +1196,9 @@ static NSUInteger const kMCNumItems = 4;
     NSIndexPath *fifthRow = [NSIndexPath indexPathForRow:1 inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:fifthRow];
     cell.textLabel.text = [formatter stringFromDate:self.datePicker.date];
+    [self.tableView reloadRowsAtIndexPaths:@[fifthRow] withRowAnimation:UITableViewRowAnimationFade];
     //[[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
-    });
+   // });
     
 }
 
