@@ -92,9 +92,7 @@
         } else if ((int)cellNumber == 1)  {
             return NSLocalizedString(@"2. Would you like to be connected with people with whom you have mutual friends on Facebook?", nil);
         } else if ((int)cellNumber == 2)  {
-            return NSLocalizedString(@"3. Would you like to meet people from: ", nil);
-        } else if ((int)cellNumber == 3)  {
-            return NSLocalizedString(@"4. I would not like to be connected with people in the following departments", nil);
+            return NSLocalizedString(@"3. I would not like to be connected with people in the following departments", nil);
         } else {
             return nil;
         }
@@ -132,71 +130,71 @@
         } else if ((int)cellNumber == 1)  {
             return NSLocalizedString(@"2. What would you say is the biggest challenge to meeting new people at Harvard or MIT? ", nil);
         } else if ((int)cellNumber == 2)  {
-            return NSLocalizedString(@"3. Do you prefer teaching or research, or both equally? ", nil);
+            return NSLocalizedString(@"3. What would you say is the biggest advantage of meeting a graduate student or alum here in Cambridge?", nil);
         } else if ((int)cellNumber == 3)  {
             return NSLocalizedString(@"4. It’s a perfect 68 degrees out and you want to spend some time on the Charles: do you go for a run, bike ride, or picnic?", nil);
         } else if ((int)cellNumber == 4)  {
-            return NSLocalizedString(@"5. Which of the following words would your close friends most likely use to describe you? ", nil);
+            return NSLocalizedString(@"5. Do you tend to prefer spending time with people one-on-one, in small groups, or in large gatherings? ", nil);
         } else if ((int)cellNumber == 5)  {
-            return NSLocalizedString(@"6. Which of the following character traits do you value most in a friend? ", nil);
+            return NSLocalizedString(@"6. Have you noticed the “young lady”-“young man” newspaper salesman in Harvard Square?", nil);
         } else if ((int)cellNumber == 6)  {
-            return NSLocalizedString(@"7. Berry Line, Pinkberry, or Yogurt Land? ", nil);
+            return NSLocalizedString(@"7. Do you prefer teaching or research, or both equally?", nil);
         } else if ((int)cellNumber == 7)  {
-            return NSLocalizedString(@"8. While all important, which of the following benefits of a close friendship or being in relationship would you say you value the most? ", nil);
+            return NSLocalizedString(@"8. Most people think that lying should generally be avoided. Which of the following statements against lying do you find most appealing?", nil);
         } else if ((int)cellNumber == 8)  {
-            return NSLocalizedString(@"9. Do you tend to prefer spending time with people one-on-one, in small groups, or in large gatherings?   ", nil);
+            return NSLocalizedString(@"9.Which of the following words would your close friends most likely use to describe you? ", nil);
         } else if ((int)cellNumber == 9)  {
-            return NSLocalizedString(@"10. Which of these two descriptions better approximates an ideal relationship: ", nil);
+            return NSLocalizedString(@"10. Which of the following character traits do you value most in a friend? (Pick one)", nil);
         } else if ((int)cellNumber == 10)  {
-            return NSLocalizedString(@"11. Thinking about times in which you have found yourself talking about your close friends or loved ones to other people, do you feel that you tend to describe them: ", nil);
+            return NSLocalizedString(@"11. Berry Line, Pinkberry, or Yogurt Land? ", nil);
         } else if ((int)cellNumber == 11)  {
-            return NSLocalizedString(@"12. In the context of a romantic relationship between two individuals, when do you think is the right time for sex:", nil);
+            return NSLocalizedString(@"12. Did you like the most recent horror film you saw? ", nil);
         } else if ((int)cellNumber == 12)  {
-            return NSLocalizedString(@"13. Many people have friends who do not know each other. Do new friends that you make tend to fit in well with your other friends? ", nil);
+            return NSLocalizedString(@"13. While all important, which of the following benefits of a close friendship or being in relationship would you say you value the most?", nil);
         } else if ((int)cellNumber == 13)  {
-            return NSLocalizedString(@"14. Do your close friends tend to get along with your romantic interests?", nil);
+            return NSLocalizedString(@"14. How often do you find yourself in conversations with strangers on the red line or an MBTA bus?", nil);
         } else if ((int)cellNumber == 14)  {
-            return NSLocalizedString(@"15. Do you to tend to know reasonably well the family members of your very closest friends?", nil);
+            return NSLocalizedString(@"15. Many people have friends who do not know each other. Do new friends that you make tend to fit in well with your other friends?", nil);
         } else if ((int)cellNumber == 15)  {
-            return NSLocalizedString(@"16. How important is it that you like someone your dating’s family and they like yours?", nil);
+            return NSLocalizedString(@"15. Do you to tend to know reasonably well the family members of your very closest friends?", nil);
         } else if ((int)cellNumber == 16)  {
-            return NSLocalizedString(@"17. Among the following four negative attributes, pick two that are especially characteristic of a bad friend? ", nil);
+            return NSLocalizedString(@"17. To what extent do the opinions of family members affect some of the more important decisions you make in your life?", nil);
         } else if ((int)cellNumber == 17)  {
-            return NSLocalizedString(@"18. Would you rather meet people with interests that are similar to yours or different than yours? Similar, Different", nil);
+            return NSLocalizedString(@"18. Thinking about times in which you have found yourself talking about your close friends or loved ones to other people, do you feel that you tend to describe them:", nil);
         } else if ((int)cellNumber == 18)  {
-            return NSLocalizedString(@"19. Compared to other people, do you think you handle the stress of grad school or work pretty well? ", nil);
+            return NSLocalizedString(@"18. Among the following four negative attributes, pick two that are especially characteristic of a bad friend?", nil);
         } else if ((int)cellNumber == 19)  {
-            return NSLocalizedString(@"20. Langdell (Law library), Lamont, or Widener? ", nil);
+            return NSLocalizedString(@"20. Would you rather meet people with interests that are similar to yours or different than yours?", nil);
         } else if ((int)cellNumber == 20)  {
-            return NSLocalizedString(@"21. How often do you enjoy going for a drink? ", nil);
+            return NSLocalizedString(@"21. Langdell (Law library), Lamont, or Widener?", nil);
         } else if ((int)cellNumber == 21)  {
-            return NSLocalizedString(@"22. Have you ever lived in the graduate student residence halls? ", nil);
+            return NSLocalizedString(@"22. Hayden, Barker, or Rotch?", nil);
         } else if ((int)cellNumber == 22)  {
-            return NSLocalizedString(@"23. Do you think that two people who love and are committed to each other generally ought to get married? ", nil);
+            return NSLocalizedString(@"23. How often do you enjoy going for a drink?", nil);
         } else if ((int)cellNumber == 23)  {
-            return NSLocalizedString(@"24. Which of the following best approximates how you feel about being in a loving, stable relationship at this point in your life? ", nil);
+            return NSLocalizedString(@"24. Imagine that psychologists and engineers created a machine that induces whatever desirable experiences you could want. The experiences would be so real that they could not be distinguished from pleasures you experience outside the machine. Would you prefer this machine to real life?", nil);
         } else if ((int)cellNumber == 24)  {
-            return NSLocalizedString(@"25. Would you prefer to make new friends in the hard sciences or humanities? ", nil);
+            return NSLocalizedString(@"25. Have you ever traveled a country alone? ", nil);
         } else if ((int)cellNumber == 25)  {
-            return NSLocalizedString(@"26. Have you noticed the “young lady”-“young man” newspaper salesman in Harvard Square?", nil);
+            return NSLocalizedString(@"26. Do you or would you enjoy living in a residential/dorm setting, like the graduate student residence halls?", nil);
         } else if ((int)cellNumber == 26)  {
-            return NSLocalizedString(@"27. In general, how does the idea of enduring challenges together with your partner sound?", nil);
+            return NSLocalizedString(@"27. Do you like to discuss political, economic, and/or cultural issues with your friends?", nil);
         } else if ((int)cellNumber == 27)  {
-            return NSLocalizedString(@"28. Do you like the taste of beer?", nil);
+            return NSLocalizedString(@"28. Would you prefer to make new friends in the hard sciences or humanities?", nil);
         } else if ((int)cellNumber == 28)  {
-            return NSLocalizedString(@"29. How religious/non-religious would you consider yourself? ", nil);
+            return NSLocalizedString(@"29. Does the idea of spending a year of your life on a sailboat sound appealing? ", nil);
         } else if ((int)cellNumber == 29)  {
-            return NSLocalizedString(@"30. Do you think that in general, men and women can be very close friends without any romantic feelings developing? ", nil);
+            return NSLocalizedString(@"30. In general, do you tend to go to your friends or close ones with issues related to grad school or your personal life?", nil);
         } else if ((int)cellNumber == 30)  {
-            return NSLocalizedString(@"31. If were dating someone who is overweight, would that be? ", nil);
+            return NSLocalizedString(@"31. What’s your favorite “Square” in Cambridge?", nil);
         } else if ((int)cellNumber == 31)  {
-            return NSLocalizedString(@"32. How often do you see your close friends in Cambridge? ", nil);
+            return NSLocalizedString(@"32. Do you like the taste of beer?", nil);
         } else if ((int)cellNumber == 32)  {
-            return NSLocalizedString(@"33. Do you tend to plan most things in advance or do you go with the flow?", nil);
+            return NSLocalizedString(@"33. How religious/non-religious would you consider yourself?", nil);
         } else if ((int)cellNumber == 33)  {
-            return NSLocalizedString(@"34. Which character flaws in friends annoy you most? ", nil);
+            return NSLocalizedString(@"34. Irrespective of how you feel about it, how often do you see your close friends in Cambridge?", nil);
         } else if ((int)cellNumber == 34)  {
-            return NSLocalizedString(@"35. For a variety of reasons, some people have a preference for being in relationships with people of different racial or ethnic background, whereas others have a preference for being in relationships with people of similar racial or ethnic background? And some people don’t care. Do you have a slight or stronger preference toward dating someone with:", nil);
+            return NSLocalizedString(@"35. Do you tend to plan most things in advance or do you go with the flow?", nil);
         } else if ((int)cellNumber == 35)  {
             return NSLocalizedString(@"36. If you had the choice as to whether there was an afterlife where everyone would be rewarded for good acts and punished for bad acts that they did, in proportion, would you want such a place to exist, assuming no other alternatives?", nil);
         } else if ((int)cellNumber == 36)  {

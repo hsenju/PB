@@ -55,9 +55,10 @@
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
     // The permissions requested from the user
-    NSArray *permissionsArray = @[ @"public_profile", @"user_photos",@"user_friends"];
+    NSArray *permissionsArray = @[ @"public_profile", @"user_friends"];
     
     // Login PFUser using Facebook
+    
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         //[_activityIndicator stopAnimating]; // Hide loading indicator
         
@@ -69,6 +70,8 @@
             }
         } else /*if (user.isNew) */{
             NSLog(@"User with facebook signed up and logged in!");
+            [[PFUser currentUser] setObject:self.email.text forKey:@"email"];
+            [[PFUser currentUser] saveInBackground];
             [self performSegueWithIdentifier: @"loginToQuestions" sender: self];
         /*} else {
             NSLog(@"User with facebook logged in!");
