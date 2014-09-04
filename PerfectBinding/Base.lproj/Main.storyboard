@@ -112,7 +112,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segControl" destination="32L-5I-y4s" id="Lyz-Wi-Qkc"/>
-                        <segue destination="dOh-hW-S3N" kind="modal" identifier="questionsDetail" modalTransitionStyle="crossDissolve" id="i7S-6F-Iqg"/>
+                        <segue destination="dOh-hW-S3N" kind="modal" identifier="questionsDetail" id="i7S-6F-Iqg"/>
                         <segue destination="t4t-kE-TuI" kind="push" identifier="questionsToMain" id="M5l-Zk-wTW"/>
                     </connections>
                 </tableViewController>
@@ -172,6 +172,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tableCell" destination="Mqn-05-DfF" id="WtC-pw-8go"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextAnswerCell" id="ugr-Kl-Csj" userLabel="Text Answer Cell" customClass="TextAnswerCell">
                                 <rect key="frame" x="0.0" y="110" width="320" height="44"/>
@@ -197,16 +200,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="dOh-hW-S3N" id="EFu-EQ-5l9"/>
+                            <outlet property="dataSource" destination="dOh-hW-S3N" id="0Qq-Y1-cmX"/>
                             <outlet property="delegate" destination="dOh-hW-S3N" id="kVB-PJ-Mk4"/>
                         </connections>
                     </tableView>
                     <connections>
                         <outlet property="datePicker" destination="WCA-cX-QAx" id="vQq-cG-Yuh"/>
-                        <segue destination="pmC-91-nWY" kind="modal" identifier="detailsMoreDetails" modalTransitionStyle="crossDissolve" id="RTe-hA-s1O"/>
+                        <segue destination="pmC-91-nWY" kind="modal" identifier="detailsMoreDetails" id="RTe-hA-s1O"/>
+                        <segue destination="qZA-4f-Exu" kind="unwind" identifier="unwindToTableController" unwindAction="unwindToThisViewController:" id="GQZ-XK-6Ds"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycn-Lj-E4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qZA-4f-Exu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1347" y="634"/>
         </scene>
@@ -234,8 +239,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="pmC-91-nWY" id="2Dx-Zw-NOR"/>
-                            <outlet property="delegate" destination="pmC-91-nWY" id="ht1-G8-pcd"/>
+                            <outlet property="dataSource" destination="pmC-91-nWY" id="sKo-bO-OPn"/>
+                            <outlet property="delegate" destination="pmC-91-nWY" id="bNH-dy-tbh"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -267,11 +272,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tableCell" destination="ba2-SU-6cm" id="epc-f1-1Fg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="ikK-2k-tz7" id="fh7-BF-uDh"/>
-                            <outlet property="delegate" destination="ikK-2k-tz7" id="GMT-6I-Auy"/>
+                            <outlet property="dataSource" destination="ikK-2k-tz7" id="fG0-zY-L9L"/>
+                            <outlet property="delegate" destination="ikK-2k-tz7" id="F7Z-E8-ecH"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="t5u-kH-2eD"/>

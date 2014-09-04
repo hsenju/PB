@@ -612,7 +612,7 @@
 				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Headers\"";
 				INFOPLIST_FILE = "PerfectBinding/PerfectBinding-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FD6CADDC-FC57-4470-8878-9AF075EEE999";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -636,7 +636,7 @@
 				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Headers\"";
 				INFOPLIST_FILE = "PerfectBinding/PerfectBinding-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FD6CADDC-FC57-4470-8878-9AF075EEE999";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

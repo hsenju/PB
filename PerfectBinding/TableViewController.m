@@ -83,7 +83,10 @@
 
 }
 
-#pragma mark - PAPActivityFeedViewController
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue
+{
+    
+}
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tab:(NSInteger)segInd{
     if (segInd == 0){
@@ -260,6 +263,11 @@
     //return 70.0;
 }
 
+- (void)dismissController {
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    //[self performSegueWithIdentifier:@"unwindToTableController" sender:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"questionsDetail"]) {
@@ -267,6 +275,7 @@
         // Get destination view
         DTableViewController *vc = [segue destinationViewController];
         
+        vc.delegate = self;
         // Pass the information to your destination view
         [vc setQuestionNumber:[NSNumber numberWithInteger:[self.tableView indexPathForSelectedRow].row]];
         [vc setTabNumber:[NSNumber numberWithInteger:segControl.selectedSegmentIndex]];
@@ -274,7 +283,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 38){
+    if (indexPath.row == 38 && segControl.selectedSegmentIndex == 2){
         [self performSegueWithIdentifier:@"questionsToMain" sender:self];
         
         dispatch_queue_t parseQueue = dispatch_queue_create("Parse Queue",NULL);
@@ -321,10 +330,11 @@
             
             [[PFUser currentUser] saveInBackground];
         });
-
-        return;
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"questionsDetail" sender:self];
+        });
     }
-    [self performSegueWithIdentifier:@"questionsDetail" sender:self];
 }
 
 - (void)viewDidLoad
@@ -332,8 +342,6 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     self.navigationController.navigationBarHidden = NO;
-    
-
     // Do any additional setup after loading the view.
 }
 

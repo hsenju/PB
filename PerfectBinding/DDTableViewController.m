@@ -47,8 +47,7 @@
         for (int i=0;i<[self  numberOfRowsInCurrentSection:[self.tabNumber intValue] question:[self.questionNumber intValue] detail:[self.detailNumber intValue]];i++){
             [cellsSelected addObject:cellUnChecked];
         }
-    }
-}
+    }}
 
 - (void)didReceiveMemoryWarning
 {
@@ -177,7 +176,6 @@
     [cell.textLabel setText:[DDTableViewController stringForCellNumber:indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber]];
 }
 
-#pragma mark - PAPActivityFeedViewController
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber{
     //if ([tnumber intValue] == 0){
@@ -867,26 +865,29 @@
     if (indexPath.row == 0){
         return;
     } else if ([[tableView cellForRowAtIndexPath:indexPath].textLabel.text  isEqual: @"Done"]){
-        [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionDetailNumbers];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        cellsSelected = nil;
+        dispatch_queue_t defaultsQueue = dispatch_queue_create("Defalts Queue",NULL);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0), defaultsQueue, ^{
+            [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionDetailNumbers];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        });
+
         [self dismissViewControllerAnimated:YES completion:nil];
         return;
     } else if (([tabNumber intValue]==0 || [tabNumber intValue]== 1) && [questionNumber intValue]==3 && [detailNumber intValue]>11 &&  [detailNumber intValue]!=15){
         [self performSegueWithIdentifier:@"detailstodd" sender:self];
         return;
     } else if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
         cellsSelected[indexPath.row] = cellUnChecked;
     } else if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryNone){
         if ([tabNumber intValue]== 1){
             for (long row = 0, rowCount = [self.tableView numberOfRowsInSection:0]; row < rowCount; ++row) {
                 UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                [cell setAccessoryType: UITableViewCellAccessoryNone];
                 [cellsSelected replaceObjectAtIndex:row withObject:cellUnChecked];
             }
         }
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
         cellsSelected[indexPath.row] = cellChecked;
     }
 }

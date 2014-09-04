@@ -226,7 +226,6 @@
     [cell.textLabel setText:[DDDTableViewController stringForCellNumber:indexPath.row tabNumber:tabNumber questionNumber:detailNumber questionQuestionNumber:self.questionNumber dddNumber:dddNumber]];
 }
 
-#pragma mark - PAPActivityFeedViewController
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber tabNumber:(NSNumber *)tnumber questionNumber:(NSNumber *)qnumber questionQuestionNumber:(NSNumber *)qqnumber dddNumber: (NSNumber *)dddnumber{
     //if ([tnumber intValue]== 0){
@@ -860,9 +859,11 @@
     if (indexPath.row == 0){
         return;
     } else if ([[tableView cellForRowAtIndexPath:indexPath].textLabel.text  isEqual: @"Done"]){
-        [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionDetailNumbers];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        cellsSelected = nil;
+        dispatch_queue_t defaultsQueue = dispatch_queue_create("Defalts Queue",NULL);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0), defaultsQueue, ^{
+            [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionDetailNumbers];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        });
         [self dismissViewControllerAnimated:YES completion:nil];
         return;
     } else if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){

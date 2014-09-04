@@ -23,6 +23,7 @@ static NSUInteger const kMCNumItems = 4;
 @interface DTableViewController ()
 @property  (strong, atomic) NSString *tabQuestionNumbers;
 @property  (strong, atomic) NSMutableArray *cellsSelected;
+@property  (strong, atomic) UIPickerView *myPickerView;
 @end
 
 @implementation DTableViewController
@@ -30,7 +31,7 @@ static NSUInteger const kMCNumItems = 4;
 @synthesize tabNumber;
 @synthesize cellsSelected;
 @synthesize tabQuestionNumbers;
-@synthesize answerTextField;
+@synthesize myPickerView;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -59,7 +60,7 @@ static NSUInteger const kMCNumItems = 4;
     }
     
     if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 4))){
-        UIPickerView *myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+        myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
         myPickerView.delegate = self;
         myPickerView.showsSelectionIndicator = YES;
         [self.view addSubview:myPickerView];
@@ -69,8 +70,18 @@ static NSUInteger const kMCNumItems = 4;
     } else {
     
     }
+    
+    
     // Do any additional setup after loading the view.
 }
+
+- (void)dealloc
+{
+    tabQuestionNumbers = nil;
+    cellsSelected = nil;
+    myPickerView = nil;
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
     // Handle the selection
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -123,10 +134,6 @@ static NSUInteger const kMCNumItems = 4;
     }
 }
 
--(void) dealloc {
-    cellsSelected = nil;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -141,8 +148,9 @@ static NSUInteger const kMCNumItems = 4;
     if (tab== 0){
         if (question == 2){
             return 18;
+        } else {
+            return 4;
         }
-        return 4;
     }else if (tab == 1){
         if(question == 0){
             return 4;
@@ -285,49 +293,50 @@ static NSUInteger const kMCNumItems = 4;
         return cell;
     
     }
-    
-    static NSString *CellIdentifier = @"DetailsCell";
-    DTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 0;
-    
-    if (!cell) {
-        cell = [[DTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    else {
+        static NSString *CellIdentifier = @"DetailsCell";
+        DTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        cell.textLabel.numberOfLines = 0;
         
-        // iOS 7 separator
-        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-            cell.separatorInset = UIEdgeInsetsZero;
+        if (!cell) {
+            cell = [[DTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+            
+            // iOS 7 separator
+            if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+                cell.separatorInset = UIEdgeInsetsZero;
+            }
+            
+            [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+            cell.contentView.backgroundColor = [UIColor whiteColor];
         }
         
-        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-        cell.contentView.backgroundColor = [UIColor whiteColor];
-    }
-    
-    [self configureCell:cell forRowAtIndexPath:indexPath];
-    if ([cellsSelected[indexPath.row]  isEqual: cellChecked]){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
-    if (indexPath.row == 0){
-        cell.userInteractionEnabled = NO;
-        cell.textLabel.font = [UIFont italicSystemFontOfSize:18.0f];
-    } else {
-        cell.userInteractionEnabled = YES;
-        cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
-    }
-    
-    if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 3 || [questionNumber intValue] == 4)&&(indexPath.row == 1))){
-        cell.userInteractionEnabled = NO;
-        [cell.textLabel setText:cellsSelected[indexPath.row]];
-        if ([cell.textLabel.text isEqualToString:@"unchecked"]){
-            [cell.textLabel setText:@""];
+        [self configureCell:cell forRowAtIndexPath:indexPath];
+        if ([cellsSelected[indexPath.row]  isEqual: cellChecked]){
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
         }
+        
+        if (indexPath.row == 0){
+            cell.userInteractionEnabled = NO;
+            cell.textLabel.font = [UIFont italicSystemFontOfSize:18.0f];
+        } else {
+            cell.userInteractionEnabled = YES;
+            cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
+        }
+        
+        if ((([tabNumber intValue]== 1)&&([questionNumber intValue] == 3 || [questionNumber intValue] == 4)&&(indexPath.row == 1))){
+            cell.userInteractionEnabled = NO;
+            [cell.textLabel setText:cellsSelected[indexPath.row]];
+            if ([cell.textLabel.text isEqualToString:@"unchecked"]){
+                [cell.textLabel setText:@""];
+            }
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    return cell;
 }
 
 - (void)configureCell:(DTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -335,7 +344,6 @@ static NSUInteger const kMCNumItems = 4;
 
 }
 
-#pragma mark - PAPActivityFeedViewController
 
 + (NSString *)stringForCellNumber:(NSInteger)cellNumber questionNumber:(NSNumber *)qnumber tabNumber:(NSNumber *)tnumber{
     if ([tnumber intValue]== 0){
@@ -1197,6 +1205,8 @@ static NSUInteger const kMCNumItems = 4;
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:fifthRow];
     cell.textLabel.text = [formatter stringFromDate:self.datePicker.date];
     [self.tableView reloadRowsAtIndexPaths:@[fifthRow] withRowAnimation:UITableViewRowAnimationFade];
+    
+    formatter = nil;
     //[[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
    // });
     
@@ -1222,10 +1232,12 @@ static NSUInteger const kMCNumItems = 4;
     if (indexPath.row == 0){
         return;
     }else if ([[tableView cellForRowAtIndexPath:indexPath].textLabel.text  isEqual: @"Done"]){
-        [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionNumbers];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        cellsSelected = nil;
-        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_queue_t defaultsQueue = dispatch_queue_create("Defalts Queue",NULL);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0), defaultsQueue, ^{
+            [[NSUserDefaults standardUserDefaults] setObject:cellsSelected forKey:tabQuestionNumbers];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        });
+        [self performSegueWithIdentifier:@"unwindToTableController" sender:self];
         return;
     }
     
